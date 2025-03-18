@@ -4,10 +4,39 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/globicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    
     <title>Globenews</title>
+    <meta name= "globenews-mobile-web-app-status-bar"	content="#aa7700">
+    <meta name="theme-color" content="black">
+    <link rel="manifest" href="manifest.json">
+
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      // Add event listener to execute code when page loads
+      window.addEventListener('load', () => {
+        // Call registerSW function when page loads
+        registerSW();
+      });
+    
+      // Register the Service Worker
+      async function registerSW() {
+        // Check if browser supports Service Worker
+        if ('serviceWorker' in navigator) {
+          try {
+            // Register the Service Worker named 'serviceworker.js'
+            await navigator.serviceworker.register('serviceworker.js');
+          }
+          catch (e) {
+            // Log error message if registration fails
+            console.log('SW registration failed');
+          }
+        }
+      }
+    </script>
+    
   </body>
 </html>
