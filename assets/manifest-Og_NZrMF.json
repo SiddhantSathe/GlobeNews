@@ -1,0 +1,22 @@
+{
+	"name":"GlobeNews",
+	"short_name":"News",
+	"start_url":"index.html",
+	"display":"standalone",
+	"background_color":"#5900b3",
+	"theme_color":"black",
+	"scope": ".",
+	"description":"Global news at one stop.",
+	"icons":[
+	{
+	"src":"assets/newspaperlogo192.png",					
+	"sizes":"192x192",
+	"type":"image/png"
+	},
+	{
+	"src":"assets/newspaperlogo512.png",
+	"sizes":"512x512",
+	"type":"image/png"
+	}
+]
+}
